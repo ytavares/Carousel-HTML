@@ -1,36 +1,13 @@
-img = new Array('1','2','3','4','5');
+var instance = M.Carousel.init({
+	fullWidth: true,
+	indicators: true
+  });
 
-indice = 0;
+  // Or with jQuery
 
-setInterval("mudaImg()", 5000);
-	
-function mudaImg(i) {
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true,
+    interval: 5000
 
-	if (i == 0 || i == 1 || i == 2 || i == 3 || i == 4) {
-		
-		indice = i;
-		
-	} else {
-		
-		if (indice == img.length - 1) {
-			
-			indice = 0;
-			
-		} else {
-			
-			indice++;
-			
-		}
-		
-	}
-	
-	document.getElementById("banner_img_1").setAttribute("class", "");
-	document.getElementById("banner_img_2").setAttribute("class", "");
-	document.getElementById("banner_img_3").setAttribute("class", "");
-    document.getElementById("banner_img_4").setAttribute("class", "");
-    document.getElementById("banner_img_5").setAttribute("class", "");
-	document.getElementById("banner_img_" + img[indice]).setAttribute("class", "hover");
-	
-	document.getElementById("banner_img").innerHTML = "<img src='media/img/banner_img/"+ img[indice] +".png' width='1020' height='580' border='0' alt='Banner'>";
-
-}
+  });
